@@ -1,0 +1,256 @@
+.head_text{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+.navbar_scrolled{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top:0;
+    margin: 0 auto;
+    max-width: 1200px;
+    z-index: 1000;
+    animation-name: fadeInUp;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+.navbar_scrolled .menu>a:hover{
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+.navbar_scrolled .menu>a {
+position: relative;
+}
+.navbar_scrolled .menu>a::after {
+    position: absolute;
+    content: " ";
+    border-bottom: 2px solid white;
+    left:15%;
+    bottom:0;
+    width: 70%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .6s;
+}
+.navbar_scrolled .menu>a:hover::after {
+    color: salmon;
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navbar_scrolled .nav-login>a svg:hover{
+    fill: black;
+}
+.nav-logo{
+    position: absolute;
+    top:-9999px;
+
+}
+.nav-logo>a{
+    text-decoration: none;
+    color: white;
+}
+.navbar_scrolled .nav-logo{
+    display: grid;
+    position: absolute;
+    width: 50px;
+    font-size: 26px;
+    top:0px;
+    left:30px;
+    color: white;
+}
+.nav-login{
+    display: none;
+}
+.nav-login a svg{
+    fill: white;
+}
+
+.navbar_scrolled .nav-login{
+    display: grid;
+    width: 30px;
+    margin-right: 20px;
+}
+.header-line-white-first {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+     background: rgb(251,0,0);
+     background: linear-gradient(90deg, rgba(251,0,0,1) 0%, rgba(255,44,0,1) 70%, rgba(255,44,0,1) 100%);
+}
+
+.navbar {
+    width: 100%;
+    height: 30px;
+    background: rgb(251,0,0);
+    background: linear-gradient(90deg, rgba(251,0,0,1) 0%, rgba(255,44,0,1) 70%, rgba(255,44,0,1) 100%);
+}
+.header-line-red {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    height: 10px;
+}
+
+.logo {
+    width: 130px;
+    z-index: 10;
+}
+.logo > a > img{
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+
+
+.white-line {
+    height: 50%;
+    width: 97%;
+    border-bottom: 1px solid white;
+}
+
+.header-text {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 35px;
+    letter-spacing: 9px;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+    align-items: center;
+}
+
+.nav-wrapper > li > a {
+    font-weight: 700;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-size: 12px;
+    padding: 8px 20px 5px 20px;
+    border-radius: 1px;
+    transition: all ease 5ms;
+
+}
+.nav-wrapper .menu>a {
+    position: relative;
+}
+.nav-wrapper .menu>a::after {
+    color: antiquewhite;
+
+    position: absolute;
+    content: " ";
+    border-bottom: 2px solid white;
+    left:15%;
+    bottom:0;
+    width: 70%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .6s;
+}
+.nav-wrapper .menu>a:hover::after {
+    color: salmon;
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-wrapper > .is-active > a {
+    color: antiquewhite;
+    transition: all ease 2ms;
+}
+.remove_logo{
+    -webkit-animation-name: fadeInOut;
+    -moz-animation-name: fadeInOut;
+    -o-animation-name: fadeInOut;
+    animation-name: fadeInOut;
+
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.second-line{
+    background-color: white;
+    height: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@keyframes  fadeInUp{
+    from{
+        opacity: 0;
+        top:-50px;
+    }
+    to{
+        padding: 20px;
+        opacity: 1;
+        top: 0;
+    }
+}
+@keyframes  fadeInOut{
+    from{
+        opacity: 1;
+        top: 0px;
+    }
+    to{
+        opacity: 0;
+        top: -500px;
+    }
+}
+.second_line_hide{
+    animation-name: secondLine;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes  secondLine{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        height: 0px;
+    }
+}
+
+
+.first_navbar{
+    align-self: baseline;
+    padding: 10px;
+}
+.first_navbar_list{
+    display: grid;
+    color: white;
+    grid-auto-flow: column;
+    list-style: none;
+}
+.first_navbar_items{
+    padding: 5px;
+    list-style: none;
+}
+.login a svg{
+    fill: white;
+}
+.user a svg{
+    fill: white;
+    color: white;!important;
+    width: 26px!important;
+    height: 26px!important;
+}
