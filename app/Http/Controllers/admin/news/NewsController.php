@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Http\Controllers\admin\news;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class NewsController extends Controller
+{
+    public function index(){
+        return view('admin.news.index');
+    }
+}
