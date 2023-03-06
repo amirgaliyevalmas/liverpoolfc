@@ -8,6 +8,8 @@ import '../css/app.css';
 //Версия для планшетов
 import '../css/planchet/planshet.css';
 // Версия для мобильных
+// Анимации для категории
+import '../css/components/category_animation.css';
 import '../css/mobile/mnavigation.css';
 import '../css/mobile/mobile.css'
 
@@ -20,6 +22,8 @@ $('.burger__menu').click(function () {
     $('body').toggleClass('lock');
 });
 
+
+
 window.addEventListener('scroll', ev => {
     let navbar = document.getElementById('navbar').classList;
     let active_class = 'navbar_scrolled';
@@ -30,6 +34,9 @@ window.addEventListener('scroll', ev => {
     let red_line = document.getElementById('header-line-white-first').classList;
     let second_line = document.getElementById('second_line').classList;
     let first_navbar = document.getElementById('first_navbar');
+
+
+
 
     if (pageYOffset > 70){
         navbar.add(active_class);
@@ -85,3 +92,26 @@ window.addEventListener('scroll', ev => {
         }
 
 
+let category = document.querySelectorAll('#category_root');
+
+for(let i=0; i<category.length; i++){
+    let category_click_count = 1;
+
+    let category_subs = document.querySelectorAll('#subs')[i].classList;
+    let category_icon = document.querySelectorAll('#category_icon')[i].classList;
+
+    category[i].addEventListener('click', ev => {
+        if(category_click_count % 2 != 0) {
+            category_icon.remove('fa-angle-down');
+            category_icon.add('fa-angle-up');
+
+            category_click_count = category_click_count + 1;
+            category_subs.add('active_category');
+        }else {
+            category_click_count = category_click_count + 1;
+            category_subs.remove('active_category');
+            category_icon.remove('fa-angle-up');
+            category_icon.add('fa-angle-down');
+        }
+    });
+}

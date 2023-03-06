@@ -1,0 +1,43 @@
+.subcategory_tree {
+    position: absolute;
+    top: -9000px;
+    list-style: none;
+    left: 5px;
+    font-weight: 500;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+.category_root {
+
+}
+
+.active_category {
+    animation-name: categoryFade;
+    animation-duration: 10ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.category_tree {
+    list-style: none;
+}
+.category_root a {
+    text-decoration: none;
+    color: white;
+}
+.subcategory_tree a{
+    text-decoration: none;
+    color: white;
+}
+@keyframes categoryFade {
+    from {
+        position: absolute;
+        opacity: 0;
+    }
+    to {
+        position: relative;
+        top: 0px;
+        opacity: 1;
+    }
+}
