@@ -3,15 +3,16 @@
 namespace App\Http\Controllers\Admin\Category;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 
 class DeleteController extends Controller
 {
-    public function delete(Category $menu)
+    public function delete(Category $category)
     {
-        if($menu->id > 9) {
-            $menu->delete();
-        }
+            $category->categories()->delete();
+            $category->delete();
+
         return redirect()->route('admin.category.index');
     }
 }

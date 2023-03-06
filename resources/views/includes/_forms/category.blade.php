@@ -7,11 +7,11 @@
         <a href="{{route('admin.category.edit', $category['id'])}}" class="ml-2 text-blue"><i
                     class="fa fa-edit"></i>
         </a>
-        <form action="{{route('admin.category.delete', $category['id'])}}" method='post'>
+        <form action="{{route('admin.category.delete', ['category' => $category['id']])}}" method='post'>
             @csrf
             @method('delete')
-            <button type="submit" hidden id="knopka"></button>
-            <label for="knopka"> <i class="fa fa-trash-alt ml-2 text-dark" role="button"></i></label>
+            <button type="submit" hidden id="{{'knopka'.$category['id']}}"></button>
+            <label for="{{'knopka'.$category['id']}}"> <i class="fa fa-trash-alt ml-2 text-dark" role="button"></i></label>
         </form>
     </div>
 
